@@ -16,16 +16,16 @@ public class Discount extends HttpServlet {
         PrintWriter writer = response.getWriter();
         String namesp = request.getParameter("tensp");
         double price;
-                price = Double.parseDouble(request.getParameter("prince"));
+                price = Double.parseDouble(request.getParameter("price"));
 
         double saleoff;
                 saleoff = Double.parseDouble(request.getParameter("saleoff"));
-//        if (namesp != null) {
             double discountAmount = price * saleoff * 0.01;
             double discountPrice = price - discountAmount;
-            writer.println("Tên SP: " + namesp);
-            writer.println("DiscountAmount: " + discountAmount);
-            writer.println("DiscountPrice: " + discountPrice);
-//        }
+        writer.write("<html>");
+        writer.write("<h1>Tensp: " + namesp+ "</h1>");
+        writer.write("<h1>DiscountAmount: " +discountAmount+ "</h1>");
+        writer.write("<h1>DiscountPrice: " + discountPrice+ "</h1>");
+        writer.write("</html>");
     }
 }
