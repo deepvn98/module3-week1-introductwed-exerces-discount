@@ -23,6 +23,7 @@ public class Discount extends HttpServlet {
 //        if (namesp != null) {
             double discountAmount = price * saleoff * 0.01;
             double discountPrice = price - discountAmount;
+            writer.println("Tên SP: " + namesp);
             writer.println("DiscountAmount: " + discountAmount);
             writer.println("DiscountPrice: " + discountPrice);
 //        }
